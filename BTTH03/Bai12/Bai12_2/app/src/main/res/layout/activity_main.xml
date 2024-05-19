@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF5199B6"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Calendar Notes"
+        android:textColor="#CF3352"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F6ED98"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Hôm nay:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edtWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nhập công việc zo đây"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Hour"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:ems="5"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Minute"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:ems="5"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#5199B6"
+        android:text="Add Work" />
+
+    <ListView
+        android:id="@+id/lvNote"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="0dp" />
+</LinearLayout>
