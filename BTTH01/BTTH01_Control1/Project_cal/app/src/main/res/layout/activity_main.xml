@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="26dp"
+        android:text="Calculator"
+        android:textColor="#41FF6A"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="101dp"
+        android:text="Nhập a"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtA"
+        android:layout_alignStart="@id/txtA"
+        android:layout_marginTop="30dp"
+        android:text="Nhập b"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtB"
+        android:layout_alignStart="@id/txtB"
+        android:layout_marginTop="30dp"
+        android:text="Kết quả"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/txtResult"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="49dp"
+        android:ems="10"
+        android:hint="kết quả"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/txtA"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="49dp"
+        android:ems="10"
+        android:hint="nhập a"
+        android:inputType="number|numberDecimal" />
+
+    <EditText
+        android:id="@+id/edB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/txtB"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="49dp"
+        android:ems="10"
+        android:hint="nhập b"
+        android:inputType="number|numberDecimal" />
+
+    <Button
+        android:id="@+id/btnPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="290dp"
+        android:text="Tổng" />
+
+    <Button
+        android:id="@+id/btnMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnPlus"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/btnPlus"
+        android:text="Hiệu" />
+
+    <Button
+        android:id="@+id/btnMulti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnPlus"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/btnMinus"
+        android:text="Tích" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnPlus"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/btnMulti"
+        android:text="Thương" />
+
+    <Button
+        android:id="@+id/btnClass"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="133dp"
+        android:layout_marginBottom="275dp"
+        android:text="Member Class" />
+</RelativeLayout>
