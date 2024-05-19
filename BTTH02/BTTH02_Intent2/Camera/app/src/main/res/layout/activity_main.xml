@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgCamera"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/btnShot"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCamera"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
+
+    <ImageButton
+        android:id="@+id/btnGallery"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@+id/imgCamera"
+        app:srcCompat="@drawable/images"
+        tools:layout_editor_absoluteX="244dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
