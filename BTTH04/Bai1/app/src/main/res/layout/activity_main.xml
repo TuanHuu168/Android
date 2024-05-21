@@ -15,7 +15,7 @@
         android:background="#FFB3C6"
         android:gravity="center"
         android:padding="8dp"
-        android:text="QUẢN LÝ SINH VIÊN"
+        android:text="STUDENT MANAGEMENT"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -31,15 +31,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
             android:paddingLeft="8dp"
-            android:text="Mã lớp"
-            android:textColor="#FFB3C6"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="Class ID"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edtClassID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text" />
@@ -56,15 +56,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
             android:paddingLeft="8dp"
-            android:text="Tên lớp"
-            android:textColor="#FFB3C6"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="Class Name"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edtClassName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text" />
@@ -81,18 +81,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
             android:paddingLeft="8dp"
-            android:text="Sĩ số"
-            android:textColor="#FFB3C6"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="Class Size"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edtClassSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="number|numberDecimal" />
     </LinearLayout>
 
     <LinearLayout
@@ -108,7 +108,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="Thêm"
+            android:backgroundTint="#FFB3C6"
+            android:text="Add"
             android:textSize="16dp" />
 
         <Button
@@ -119,7 +120,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="Xóa"
+            android:backgroundTint="#FFB3C6"
+            android:text="Delete"
             android:textSize="16dp" />
     </LinearLayout>
 
@@ -129,7 +131,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_marginTop="5dp"
-        android:text="Sửa"
+        android:backgroundTint="#FFB3C6"
+        android:text="Edit"
         android:textSize="16dp" />
 
     <ListView
