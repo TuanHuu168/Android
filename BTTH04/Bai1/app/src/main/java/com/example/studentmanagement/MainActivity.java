@@ -4,12 +4,17 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnAdd = findViewById(R.id.btnAdd);
         btnDel = findViewById(R.id.btnDel);
-        btnEdit = findViewById(R.id.btnEdit);
+        btnEdit = findViewById(R.id.btnUpdate);
 
         lvClass = findViewById(R.id.lvClass);
         myList = new ArrayList<>();
@@ -179,7 +184,52 @@ public class MainActivity extends AppCompatActivity {
                 loadData();
             }
         });
+
+        lvClass.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedText = (String) parent.getItemAtPosition(position);
+                String parts[] = selectedText.split(" - ");
+                edtClassID.setText(parts[0]);
+                edtClassName.setText(parts[1]);
+                edtClassSize.setText(parts[2]);
+            }
+        });
+
+        edtClassID.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String searchText = s.toString().trim();
+                filterList(searchText);
+            }
+        });
         loadData();
+    }
+
+    // Hàm lọc danh sách dựa trên giá trị nhập vào
+    private void filterList(String searchText) {
+        
+        ArrayList<String> filteredList = new ArrayList<>();
+        for (String item : myList) {
+            if (item.startsWith(searchText)) {
+                filteredList.add(item);
+            }
+        }
+
+        // Cập nhật lại Adapter với danh sách đã lọc
+        myAdapter.clear();
+        myAdapter.addAll(filteredList);
+        myAdapter.notifyDataSetChanged();
     }
 
     private void loadData(){
@@ -194,6 +244,11 @@ public class MainActivity extends AppCompatActivity {
         }
         cusor.close();
         myAdapter.notifyDataSetChanged();
+
+        // Xóa dữ liệu ở các editText
+        edtClassID.setText("");
+        edtClassName.setText("");
+        edtClassSize.setText("");
     }
 
     private boolean isRecordExist(String classID, String className, int classSize, boolean checkAll) {
