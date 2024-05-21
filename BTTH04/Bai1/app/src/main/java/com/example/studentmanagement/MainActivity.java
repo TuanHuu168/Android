@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 loadData();
+                clearData();
             }
         });
 
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 loadData();
+                clearData();
             }
         });
 
@@ -182,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 loadData();
+                clearData();
             }
         });
 
@@ -204,12 +207,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                String searchText = s.toString().trim();
+                String searchText = (s+"").trim();
                 filterList(searchText);
             }
         });
@@ -218,7 +220,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Hàm lọc danh sách dựa trên giá trị nhập vào
     private void filterList(String searchText) {
-        
+        if(searchText.equals("")){
+            loadData();
+            return;
+        }
         ArrayList<String> filteredList = new ArrayList<>();
         for (String item : myList) {
             if (item.startsWith(searchText)) {
@@ -244,11 +249,6 @@ public class MainActivity extends AppCompatActivity {
         }
         cusor.close();
         myAdapter.notifyDataSetChanged();
-
-        // Xóa dữ liệu ở các editText
-        edtClassID.setText("");
-        edtClassName.setText("");
-        edtClassSize.setText("");
     }
 
     private boolean isRecordExist(String classID, String className, int classSize, boolean checkAll) {
@@ -272,5 +272,12 @@ public class MainActivity extends AppCompatActivity {
             return count > 0;
         }
         return false;
+    }
+
+    private void clearData(){
+        // Xóa dữ liệu ở các editText
+        edtClassID.setText("");
+        edtClassName.setText("");
+        edtClassSize.setText("");
     }
 }
