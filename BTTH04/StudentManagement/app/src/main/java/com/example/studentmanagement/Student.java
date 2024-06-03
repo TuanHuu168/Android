@@ -44,6 +44,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return name + " - " + email;
+        return id + " - " + name + " - " + email;
     }
 }

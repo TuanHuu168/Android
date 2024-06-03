@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Student selectedStudent = studentList.get(position);
                 selectedStudentId = selectedStudent.getId();
+                Toast.makeText(MainActivity.this, selectedStudentId, Toast.LENGTH_SHORT).show();
                 editTextName.setText(selectedStudent.getName());
                 editTextEmail.setText(selectedStudent.getEmail());
             }
