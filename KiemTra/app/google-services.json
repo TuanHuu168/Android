@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "246273636397",
+    "firebase_url": "https://giuaky-c029c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "giuaky-c029c",
+    "storage_bucket": "giuaky-c029c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246273636397:android:49a999cda73f2d6da060a4",
+        "android_client_info": {
+          "package_name": "com.example.projectgk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTSLpD-_D9VfE27kGEc6bMS4z2D-Lof-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
