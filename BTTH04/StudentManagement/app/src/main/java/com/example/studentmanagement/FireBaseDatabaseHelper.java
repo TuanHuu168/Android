@@ -13,7 +13,7 @@ public class FireBaseDatabaseHelper {
 
     public void addStudent(Student student) {
         String id = mReferenceStudents.push().getKey(); //Tạo một khóa duy nhất
-//        student.setId(id); // Gán khóa này cho đối tượng Student
+        student.setId(id); // Gán khóa này cho đối tượng Student
         mReferenceStudents.child(id).setValue(student);
     }
 

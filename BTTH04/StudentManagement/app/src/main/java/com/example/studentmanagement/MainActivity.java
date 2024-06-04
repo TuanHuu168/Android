@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
     private void addStudent() {
         String name = editTextName.getText().toString();
         String email = editTextEmail.getText().toString();
-        String id = databaseHelper.getReference().push().getKey();
-        Student student = new Student(id, name, email);
+//        String id = databaseHelper.getReference().push().getKey();
+        Student student = new Student("", name, email);
         databaseHelper.addStudent(student);
         clearData();
     }
