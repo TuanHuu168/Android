@@ -11,42 +11,42 @@ public class DataBaseHelper {
     }
 
     // Thêm đơn vị mới vào Firebase
-    public void addDonVi(DonVi donVi) {
-        mDatabase.child("DonVi").child(donVi.getMaDonVi()).setValue(donVi);
+    public void addUnit(Unit unit) {
+        mDatabase.child("Unit").child(unit.getUnitId()).setValue(unit);
     }
 
     // Sửa thông tin đơn vị trong Firebase
-    public void updateDonVi(String maDonVi, DonVi donVi) {
-        mDatabase.child("DonVi").child(maDonVi).setValue(donVi);
+    public void updateUnit(String unitId, Unit unit) {
+        mDatabase.child("Unit").child(unitId).setValue(unit);
     }
 
     // Xóa đơn vị khỏi Firebase
-    public void deleteDonVi(String maDonVi) {
-        mDatabase.child("DonVi").child(maDonVi).removeValue();
+    public void deleteUnit(String unitId) {
+        mDatabase.child("Unit").child(unitId).removeValue();
     }
 
     // Thêm nhân viên mới vào Firebase
-    public void addNhanVien(NhanVien nhanVien) {
-        mDatabase.child("NhanVien").child(nhanVien.getMaNhanVien()).setValue(nhanVien);
+    public void addEmployee(Employee employee) {
+        mDatabase.child("Employee").child(employee.getEmployeeId()).setValue(employee);
     }
 
     // Sửa thông tin nhân viên trong Firebase
-    public void updateNhanVien(String maNhanVien, NhanVien nhanVien) {
-        mDatabase.child("NhanVien").child(maNhanVien).setValue(nhanVien);
+    public void updateEmployee(String employeeId, Employee employee) {
+        mDatabase.child("Employee").child(employeeId).setValue(employee);
     }
 
     // Xóa nhân viên khỏi Firebase
-    public void deleteNhanVien(String maNhanVien) {
-        mDatabase.child("NhanVien").child(maNhanVien).removeValue();
+    public void deleteEmployee(String employeeId) {
+        mDatabase.child("Employee").child(employeeId).removeValue();
     }
 
     // Lấy đơn vị từ Firebase
-    public DatabaseReference getDonViReference() {
-        return mDatabase.child("DonVi");
+    public DatabaseReference getUnitReference() {
+        return mDatabase.child("Unit");
     }
 
     // Lấy nhân viên từ Firebase
-    public DatabaseReference getNhanVienReference() {
-        return mDatabase.child("NhanVien");
+    public DatabaseReference getEmployeeReference() {
+        return mDatabase.child("Employee");
     }
 }
