@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="50dp"
+        android:theme="?attr/actionBarTheme">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Danh Bạ TLU"
+            android:textColor="@color/pink"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnAddContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/icon_add" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/pink">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/mEmployee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NHÂN VIÊN" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/mUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ĐƠN VỊ" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mViewPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
