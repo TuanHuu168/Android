@@ -17,6 +17,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class EmployeeDetailActivity extends AppCompatActivity {
 
@@ -64,6 +67,25 @@ public class EmployeeDetailActivity extends AppCompatActivity {
         EmployeeNumber.setText("SĐT nhân viên: " + empPhoneNumber);
         UnitId.setText("Mã đơn vị: " + empUnitId);
 
+        // Lấy tên đơn vị từ Firebase
+        DataBaseHelper dataBaseHelper = new DataBaseHelper();
+        dataBaseHelper.getUnitReference().child(empUnitId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String unitName = dataSnapshot.child("fullName").getValue(String.class);
+                    UnitId.setText("Tên đơn vị: " + unitName);
+                } else {
+                    UnitId.setText("Đơn vị không tồn tại");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(EmployeeDetailActivity.this, "Lỗi khi lấy tên đơn vị: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         // Sử dụng Glide để load ảnh
         Glide.with(this)
                 .load(empProfilePicture)
@@ -90,7 +112,6 @@ public class EmployeeDetailActivity extends AppCompatActivity {
                     .setMessage("Bạn có chắc chắn muốn xóa nhân viên này không?")
                     .setPositiveButton("Có", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            DataBaseHelper dataBaseHelper = new DataBaseHelper();
                             dataBaseHelper.deleteEmployee(empId);
                             Toast.makeText(EmployeeDetailActivity.this, "Nhân viên đã được xóa", Toast.LENGTH_SHORT).show();
                             finish(); // Đóng activity sau khi xóa

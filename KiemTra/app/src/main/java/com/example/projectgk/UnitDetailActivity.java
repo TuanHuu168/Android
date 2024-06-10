@@ -17,6 +17,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class UnitDetailActivity extends AppCompatActivity {
 
@@ -65,7 +68,26 @@ public class UnitDetailActivity extends AppCompatActivity {
         UnitWebsite.setText("Website đơn vị: " + unitWebsite);
         UnitAddress.setText("Địa chỉ đơn vị: " + unitAddress);
         UnitNumber.setText("SĐT đơn vị: " + unitPhoneNumber);
-        ParentUnitId.setText("Mã đơn vị cha: " + unitParentUnitId);
+        ParentUnitId.setText("Tên đơn vị cha: " + unitParentUnitId);
+
+        // Lấy tên đơn vị từ Firebase
+        DataBaseHelper dataBaseHelper = new DataBaseHelper();
+        dataBaseHelper.getUnitReference().child(unitParentUnitId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String unitName = dataSnapshot.child("fullName").getValue(String.class);
+                    ParentUnitId.setText("Tên đơn vị cha: " + unitName);
+                } else {
+                    ParentUnitId.setText("Không có đơn vị cha");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(UnitDetailActivity.this, "Lỗi khi lấy tên đơn vị: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Sử dụng Glide để load ảnh
         Glide.with(this)
@@ -104,4 +126,5 @@ public class UnitDetailActivity extends AppCompatActivity {
                     .show();
         });
     }
+
 }
