@@ -177,7 +177,6 @@ public class AddEmployeeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> units = new ArrayList<>();
-                units.add(""); // Thêm tùy chọn trống đầu tiên
                 for (DataSnapshot unitSnapshot : dataSnapshot.getChildren()) {
                     String unitName = unitSnapshot.child("fullName").getValue(String.class);
                     units.add(unitName);

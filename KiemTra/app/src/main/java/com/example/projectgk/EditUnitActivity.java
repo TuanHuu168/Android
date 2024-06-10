@@ -101,6 +101,7 @@ public class EditUnitActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> units = new ArrayList<>();
+                units.add("");
                 for (DataSnapshot unitSnapshot : dataSnapshot.getChildren()) {
                     String unitName = unitSnapshot.child("fullName").getValue(String.class);
                     units.add(unitName);
