@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1098212103944",
+    "firebase_url": "https://test-firebase-e5428-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "test-firebase-e5428",
+    "storage_bucket": "test-firebase-e5428.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098212103944:android:c5fb7d0f81edbbdcee3ebd",
+        "android_client_info": {
+          "package_name": "com.example.studentmanagement"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmNFvSAYlZJt8S1RqqOA9dxtUHdt__arM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098212103944:android:89a752c7229f3a00ee3ebd",
+        "android_client_info": {
+          "package_name": "com.example.testfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmNFvSAYlZJt8S1RqqOA9dxtUHdt__arM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
